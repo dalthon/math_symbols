@@ -1,0 +1,13 @@
+class TrueClass
+  def `⊕`: (bool) -> bool
+  def `⇔`: (bool) -> bool
+  def `↔`: (bool) -> bool
+  def `⇒`: (bool) -> bool
+end
+
+class FalseClass
+  def `⊕`: (bool) -> bool
+  def `⇔`: (bool) -> bool
+  def `↔`: (bool) -> bool
+  def `⇒`: (bool) -> bool
+end

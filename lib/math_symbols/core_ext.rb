@@ -1,6 +1,7 @@
 require_relative 'math_extensions'
 
 require_relative 'core_ext/array'
+require_relative 'core_ext/boolean'
 require_relative 'core_ext/complex'
 require_relative 'core_ext/enumerable'
 require_relative 'core_ext/float'

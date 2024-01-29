@@ -64,9 +64,52 @@ module MathSymbols # rubocop:disable Metrics/ModuleLength
     end
   end
 
+  refine TrueClass do
+    def ⊕(other)
+      !other
+    end
+
+    def ⇔(other)
+      other
+    end
+    alias :↔ :⇔
+
+    def ⇒(other)
+      other
+    end
+  end
+
+  refine FalseClass do
+    def ⊕(other)
+      other
+    end
+
+    def ⇔(other)
+      !other
+    end
+    alias :↔ :⇔
+
+    def ⇒(_other)
+      true
+    end
+  end
+
   refine Integer do
     def √(value)
       value ** (1.0 / self)
+    end
+
+    def ⊕(value)
+      self ^ value
+    end
+
+    def ⇔(value)
+      (self && value) || (!self && !value)
+    end
+    alias :↔ :⇔
+
+    def ⇒(value)
+      !self || value
     end
   end
 
