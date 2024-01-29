@@ -1,0 +1,4 @@
+class Hash[unchecked out K, unchecked out V]
+  def self.`ø`: [K, V] () -> Hash[K, V]
+  def self.`Ø`: [K, V] () -> Hash[K, V]
+end

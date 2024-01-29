@@ -7,4 +7,11 @@ module MathSymbols # rubocop:disable Metrics/ModuleLength
     end
     alias :Ø :ø
   end
+
+  refine Hash.singleton_class do
+    def ø
+      {}
+    end
+    alias :Ø :ø
+  end
 end
