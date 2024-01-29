@@ -1,0 +1,22 @@
+interface _Summable
+  def +: (Integer | Float | Complex | Rational) -> (Integer | Float | Complex | Rational)
+end
+
+interface _Multipliable
+  def *: (Integer | Float | Complex | Rational) -> (Integer | Float | Complex | Rational)
+end
+
+module MathSymbols
+  module MathExtensions
+    def `∑`: [Elem] (Enumerable[Elem] enumerable) { (Elem) -> (Numeric & _Summable)     } -> (Numeric & _Summable)
+    def `∏`: [Elem] (Enumerable[Elem] enumerable) { (Elem) -> (Numeric & _Multipliable) } -> (Numeric & _Multipliable)
+
+    def `√`: (Numeric & _ToF value) -> (Numeric & _ToF)
+    def `Γ`: (Numeric & _ToF value) -> (Numeric & _ToF)
+
+    def `π`: () -> Float
+    def `∞`: () -> Numeric
+
+    def `δ`: (untyped value) -> Numeric
+  end
+end

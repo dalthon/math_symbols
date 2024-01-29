@@ -1,6 +1,11 @@
 require_relative 'math_symbols/version'
+require_relative 'math_symbols/math_extensions'
 
 module MathSymbols # rubocop:disable Metrics/ModuleLength
+  refine Math.singleton_class do
+    import_methods MathSymbols::MathExtensions
+  end
+
   refine Array.singleton_class do
     def ø
       []
@@ -34,33 +39,7 @@ module MathSymbols # rubocop:disable Metrics/ModuleLength
   end
 
   refine Object do
-    def ∑(enumerable)
-      enumerable.inject 0 do |acc, x|
-        yield(x) + acc
-      end
-    end
-
-    def ∏(enumerable)
-      enumerable.inject 1 do |acc, x|
-        yield(x) * acc
-      end
-    end
-
-    def √(value)
-      Math.sqrt value
-    end
-
-    def Γ(value)
-      Math.gamma value
-    end
-
-    def π
-      Math::PI
-    end
-
-    def ∞
-      Float::INFINITY
-    end
+    import_methods MathSymbols::MathExtensions
 
     def δ(value)
       value.zero? ? ∞ : 0
