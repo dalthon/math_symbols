@@ -1,0 +1,8 @@
+module Enumerable[unchecked out Elem] : _Each[Elem]
+  def `∑`: [Elem] () { (Elem) -> (Numeric & _Summable)     } -> (Numeric & _Summable)
+  def `∏`: [Elem] () { (Elem) -> (Numeric & _Multipliable) } -> (Numeric & _Multipliable)
+
+  def `∀`: [Elem] () { (Elem) -> boolish } -> bool
+  def `∃`: [Elem] () { (Elem) -> boolish } -> bool
+  def `∄`: [Elem] () { (Elem) -> boolish } -> bool
+end
