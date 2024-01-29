@@ -1,0 +1,3 @@
+module MathSymbols
+  VERSION: String
+end
