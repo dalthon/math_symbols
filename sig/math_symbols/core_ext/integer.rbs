@@ -1,0 +1,8 @@
+class Integer
+  def `√`: (Integer | Float | Complex | Rational value) -> Numeric
+
+  def `⊕`: (Integer value) -> Integer
+  def `⇔`: (Integer value) -> Integer
+  def `↔`: (Integer value) -> Integer
+  def `⇒`: (Integer value) -> Integer
+end

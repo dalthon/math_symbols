@@ -1,0 +1,3 @@
+class Complex
+  def `√`: (Integer | Float | Complex | Rational value) -> Numeric
+end
