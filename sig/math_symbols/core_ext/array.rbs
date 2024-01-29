@@ -1,0 +1,4 @@
+class Array[unchecked out T]
+  def self.`ø`: [T] () -> Array[T]
+  def self.`Ø`: [T] () -> Array[T]
+end
