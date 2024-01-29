@@ -1,4 +1,5 @@
 require 'math_symbols'
+require 'math_symbols/core_ext'
 
 RSpec.configure do |config|
   config.example_status_persistence_file_path = '.rspec_status'
