@@ -104,12 +104,17 @@ module MathSymbols # rubocop:disable Metrics/ModuleLength
     end
 
     def ⇔(value)
-      (self && value) || (!self && !value)
+      max_bit_length = value.bit_length
+      max_bit_length = bit_length if bit_length > max_bit_length
+      mask = (1 << max_bit_length) - 1
+
+      (self & value) | ((mask ^ self) & (mask ^ value))
     end
     alias :↔ :⇔
 
     def ⇒(value)
-      !self || value
+      mask = (1 << bit_length) - 1
+      (mask ^ self) | value
     end
   end
 
