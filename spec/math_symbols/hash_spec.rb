@@ -1,3 +1,5 @@
+using MathSymbols if ENV['WITH_REFINEMENTS']
+
 RSpec.describe Hash do
   it 'returns empty hash on ø' do
     expect(Hash.ø).to eq Hash.new

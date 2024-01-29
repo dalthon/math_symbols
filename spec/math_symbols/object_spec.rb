@@ -1,3 +1,5 @@
+using MathSymbols if ENV['WITH_REFINEMENTS']
+
 RSpec.describe Object do # rubocop:disable Metrics/BlockLength
   it 'defines a function with ƒ' do
     func = ƒ { |x| x * π }

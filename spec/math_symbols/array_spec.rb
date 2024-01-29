@@ -1,3 +1,5 @@
+using MathSymbols if ENV['WITH_REFINEMENTS']
+
 RSpec.describe Array do
   it 'returns empty array on ø' do
     expect(Array.ø).to eq []

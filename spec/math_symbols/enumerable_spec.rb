@@ -1,3 +1,5 @@
+using MathSymbols if ENV['WITH_REFINEMENTS']
+
 class FixedArray
   include Enumerable
 

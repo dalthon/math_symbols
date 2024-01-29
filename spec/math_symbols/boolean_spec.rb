@@ -1,3 +1,5 @@
+using MathSymbols if ENV['WITH_REFINEMENTS']
+
 RSpec.describe TrueClass do
   it 'should perform exclusive and on ⊕' do
     expect(true.⊕ true).to  be false

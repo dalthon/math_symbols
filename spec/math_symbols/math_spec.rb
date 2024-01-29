@@ -1,3 +1,5 @@
+using MathSymbols if ENV['WITH_REFINEMENTS']
+
 RSpec.describe Math do # rubocop:disable Metrics/BlockLength
   it 'returns π' do
     expect(Math.π).to eq Math::PI
