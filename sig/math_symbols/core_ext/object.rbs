@@ -1,0 +1,7 @@
+class Object
+  def `∈`: (untyped set) -> bool
+  def `∉`: (untyped set) -> bool
+
+  def `ƒ`: [V, U] () { (*V) [self: singleton(Math)] -> U } -> (^(*V) [self: singleton(Math)] -> U)
+  def `λ`: [U] () { (singleton(Math)) [self: singleton(Math)] -> U } -> U
+end

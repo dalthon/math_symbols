@@ -1,4 +1,39 @@
 RSpec.describe Object do # rubocop:disable Metrics/BlockLength
+  it 'defines a function with ƒ' do
+    func = ƒ { |x| x * π }
+    expect( func[2] ).to eq(2*Math::PI)
+  end
+
+  it 'evaluates a block with math context with λ' do
+    expect( λ { 2 * π } ).to eq(2*Math::PI)
+  end
+
+  describe '∈ method' do
+    it 'returns true when x ∈ set' do
+      x = Object.new
+      set = [x]
+      expect( x.∈ set ).to be true
+    end
+
+    it 'returns true when x ∉ set' do
+      x = Object.new
+      expect( x.∈ [] ).to be false
+    end
+  end
+
+  describe '∉ method' do
+    it 'returns false when x ∈ set' do
+      x = Object.new
+      set = [x]
+      expect( x.∉ set ).to be false
+    end
+
+    it 'returns true when x ∉ set' do
+      x = Object.new
+      expect( x.∉ [] ).to be true
+    end
+  end
+
   describe MathSymbols::MathExtensions do # rubocop:disable Metrics/BlockLength
     it 'returns π' do
       expect(π).to eq Math::PI
